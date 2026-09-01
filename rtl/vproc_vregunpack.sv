@@ -85,8 +85,8 @@ module vproc_vregunpack
     vproc_pkg::op_unit                     pipe_in_unit_q;
       always_ff @(posedge clk_i) begin
     if (~sync_rst_ni) begin
-        pipe_in_eew_q <= '0;
-        pipe_in_unit_q <= '0;
+        pipe_in_eew_q <= VSEW_8;
+        pipe_in_unit_q <= UNIT_LSU;
     end else begin
         pipe_in_eew_q <= pipe_in_eew_i;  //Need to buffer this value, temporary fix.  
         pipe_in_unit_q <= pipe_in_unit_i;
